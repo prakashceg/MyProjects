@@ -48,12 +48,12 @@ def Fn_NullCheck(row_data,con):
                                 qry=qry+"insert into CTL_ERROR_TBL(QRY_DT ,QRY_ID ,CHECK_TYPE ,TBL_NAME,ERROR_COUNT , STOP_FLG) SELECT sysdate,"+str(row_data[0])+",'"+str(row_data[1])+"','"+str(row_data[2])+"',"+str(cnt)+",'"+ str(row_data[5])+"' from dual"
                                 curs_inner.execute(qry)
                                 curs_inner.execute("commit")
-                        #echo -e "AWeb on `date -d "-1 days" +%Y-%m-%d`\nmessage date `date  +%Y-%m-%d`" | mailx -s "Webinar Automation Status Report"  pchokkalingam@salesforce.com
+                        #echo -e "AWeb on `date -d "-1 days" +%Y-%m-%d`\nmessage date `date  +%Y-%m-%d`" | mailx -s "Webinar Automation Status Report"  prakash.mcn@gmail.com
                         print(qry)
                         msg['Subject']='Table Data Issue Mail '+time.strftime("%d-%b-%Y")
                         msg='Test Query in Tbl_name='+str(row_data[2])+'  with Qry_Id ='+str(row_data[0])+' Failed'
                         mailto=str(row_data[10])
-                        server.sendmail('pchokkalingam@salesforce.com',mailto,msg.as_string())
+                        server.sendmail('prakash.mcn@gmail.com',mailto,msg.as_string())
 
 
 
