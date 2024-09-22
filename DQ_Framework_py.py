@@ -21,7 +21,7 @@ wfname= sys.argv[1]
 print wfname
 
 
-server = 'mail.internal.salesforce.com'
+server = 'mail.internal.mycompany.com'
 server = smtplib.SMTP(server,25)
 server.ehlo()
 server.starttls()
